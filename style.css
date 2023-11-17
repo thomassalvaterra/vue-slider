@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #222;
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* una classe per le immagini di default (non-attive) */
+.img {
+    border-radius: 0.5rem;
+    width: 10rem;
+    opacity: 0.5;
+}
+
+/* una classe per immagine "attiva" */
+.imgActive {
+    opacity: 1;
+}

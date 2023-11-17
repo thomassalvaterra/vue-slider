@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js Classic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- ciclo per immagini -->
+        <div class="container">
+            <img v-for="(img, i) in immagini" :src="img.immagine" class="img" :class="{ imgActive: (i == slideNumber) }" :alt="img.descrizione">
+        </div>
+
+        <!-- abbiamo un'immagine, che è quella corrente: immagini[slideNumber] -->
+        <img :src="immagini[slideNumber].immagine" alt="">
+        <h1>{{ immagini[slideNumber].titolo }}</h1>
+        <h3>{{ immagini[slideNumber].descrizione }}</h3>
+
+        <!-- abbiamo dei pulsanti che al click cambiano il valore di slideNumber -->
+        <button @click="back()">indietro</button>
+        <button @click="next()">avanti</button>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
