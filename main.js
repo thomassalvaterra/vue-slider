@@ -4,6 +4,7 @@ const opzioni = {
     data: function() {
         return {
             slideNumber: 0,
+            intervallo: null,
             immagini:[
                 {
                     immagine: 'https://img.freepik.com/free-photo/sunset-time-tropical-beach-sea-with-coconut-palm-tree_74190-1075.jpg',
@@ -45,11 +46,25 @@ const opzioni = {
         },
         cambiaSlide(e){
             this.slideNumber = e;
+        },
+        autoPlay() {
+            console.log( this.intervallo );
+            
+            if(!this.intervallo) {
+                this.intervallo = setInterval (()=>{
+                    this.next();
+                }, 1000);
+            } else {
+                clearInterval(this.intervallo);
+                this.intervallo = null;
+            }
         }
     },
 
     mounted () {
         console.log("Pagina caricata");
+
+        this.autoPlay();
     }
 }
 

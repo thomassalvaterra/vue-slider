@@ -22,6 +22,8 @@
         <!-- abbiamo dei pulsanti che al click cambiano il valore di slideNumber -->
         <button @click="back()">Back</button>
         <button @click="next()">Next</button>
+        <button @click="autoPlay()">{{ intervallo ? "Stop" : "Play" }}</button>
+        
     </div>
     
     <script src="main.js"></script>
