@@ -3,7 +3,7 @@ const { createApp } = Vue;
 const opzioni = {
     data: function() {
         return {
-            slideNumber: 0
+            slideNumber: 0,
             immagini:[
                 {
                     immagine: 'https://img.freepik.com/free-photo/sunset-time-tropical-beach-sea-with-coconut-palm-tree_74190-1075.jpg',
@@ -42,7 +42,14 @@ const opzioni = {
             } else {
                 this.slideNumber = 0;
             }
+        },
+        cambiaSlide(e){
+            this.slideNumber = e;
         }
+    },
+
+    mounted () {
+        console.log("Pagina caricata");
     }
 }
 

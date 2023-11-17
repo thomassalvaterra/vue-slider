@@ -8,11 +8,13 @@ body{
     background-color: #222;
     color: white;
     font-family: sans-serif;
+    text-align: center;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 /* una classe per le immagini di default (non-attive) */

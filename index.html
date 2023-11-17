@@ -11,7 +11,7 @@
     <div id="app">
         <!-- ciclo per immagini -->
         <div class="container">
-            <img v-for="(img, i) in immagini" :src="img.immagine" class="img" :class="{ imgActive: (i == slideNumber) }" :alt="img.descrizione">
+            <img v-for="(img, i) in immagini" :key="i" @click="cambiaSlide(i)" :src="img.immagine" class="img" :class="{ imgActive: (i == slideNumber) }" :alt="img.descrizione">
         </div>
 
         <!-- abbiamo un'immagine, che è quella corrente: immagini[slideNumber] -->
@@ -20,8 +20,8 @@
         <h3>{{ immagini[slideNumber].descrizione }}</h3>
 
         <!-- abbiamo dei pulsanti che al click cambiano il valore di slideNumber -->
-        <button @click="back()">indietro</button>
-        <button @click="next()">avanti</button>
+        <button @click="back()">Back</button>
+        <button @click="next()">Next</button>
     </div>
     
     <script src="main.js"></script>
